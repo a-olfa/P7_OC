@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Default risk score prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/predict" method="post">
+		<select name="customer_id" method="GET" action="/">
+		{% for option_ in option_list %}
+			<option value="{{option_}}" SELECTED>{{option_}}</option>"
+		{% endfor %}
+		</select>
+        <button type="submit" class="btn btn-primary execute" value="submit">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+    <br>
+
+
+
+ </div>
+
+</body>
+</html>
