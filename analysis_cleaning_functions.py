@@ -177,7 +177,6 @@ def transform_flag_variables (df):
             df[c] = df[c].replace(['N'], 0.)
             df[c] = df[c].replace(numpy.nan, -1.)
             df[c] = pd.to_numeric(df[c])
-            print(df[c].unique() )   
         elif  (c.startswith('NFLAG')) :
             df[c] = df[c].replace(['Y'], 0.)
             df[c] = df[c].replace(['N'], 1.)
